@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := sagit
+PRODUCT_RELEASE_NAME := chiron
 
 $(call inherit-product, build/target/product/embedded.mk)
 
@@ -23,8 +23,8 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := sagit
-PRODUCT_NAME := omni_sagit
+PRODUCT_DEVICE := chiron
+PRODUCT_NAME := omni_chiron
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MI 6
+PRODUCT_MODEL := MI MIX 2
 PRODUCT_MANUFACTURER := Xiaomi
