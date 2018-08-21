@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+export OF_MAINTEINER="AleD219 | chiron"
+export OF_FLASHLIGHT_ENABLE=0
+
 # Release name
 PRODUCT_RELEASE_NAME := chiron
 
