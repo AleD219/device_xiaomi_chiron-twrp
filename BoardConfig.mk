@@ -23,6 +23,8 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+DEVICE_PATH := device/xiaomi/chiron
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -54,7 +56,17 @@ BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3
 BOARD_KERNEL_CMDLINE += androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-TARGET_PREBUILT_KERNEL := device/xiaomi/chiron/prebuilt/Image.gz-dtb
+# DJ9
+ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
+TARGET_KERNEL_CONFIG := chiron_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/chiron
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+else
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+PRODUCT_COPY_FILES += \
+    $(TARGET_PREBUILT_KERNEL):kernel
+endif
+# DJ9
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
@@ -94,6 +106,7 @@ TARGET_USES_UEFI := true
 
 # Encryption
 TW_INCLUDE_CRYPTO := true
+
 # legacy hardware crypto used until 2018-04-20 by OmniROM/LineageOS/ResurrectionRemix/AOSP/AICP based ROMS
 #TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 #TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
@@ -117,7 +130,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 TW_INCLUDE_NTFS_3G := true
 TW_NO_EXFAT := false
 TW_NO_EXFAT_FUSE := false
-#TW_NO_USB_STORAGE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_IGNORE_MISC_WIPE_DATA := true
 
@@ -127,7 +139,7 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXTRA_LANGUAGES := true
-# TW_DEFAULT_LANGUAGE := en
+TW_DEFAULT_LANGUAGE := en
 TW_EXCLUDE_SUPERSU := true
 
 # Disable Mouse Cursor
