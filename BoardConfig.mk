@@ -72,6 +72,8 @@ endif
 TARGET_BOARD_PLATFORM := msm8998
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno540
 
+export CROSS_COMPILE_ARM32 = arm-linux-androideabi- 
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
