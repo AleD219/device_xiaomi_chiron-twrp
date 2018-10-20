@@ -22,6 +22,9 @@
 # bitrot and build breakages. Building a component unconditionally does
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
+#Copyright (C) 2018 OrangeFox Recovery Project
+#Copyright (C) 2018 PitchBlack Recovery Project
+
 
 DEVICE_PATH := device/xiaomi/chiron
 

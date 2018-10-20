@@ -12,7 +12,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+#Copyright (C) 2018 OrangeFox Recovery Project
+#Copyright (C) 2018 PitchBlack Recovery Project
+
 
 # Release name
 PRODUCT_RELEASE_NAME := chiron
