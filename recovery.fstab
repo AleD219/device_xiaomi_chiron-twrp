@@ -3,7 +3,7 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 # This is a v1 fstab file
 
-/system         ext4      /dev/block/bootdevice/by-name/system               flags=display="System"
+/system_root	ext4	/dev/block/bootdevice/by-name/system					flags=display="System"
 /system_image   emmc      /dev/block/bootdevice/by-name/system               flags=backup=0;flashimg=1
 /data           ext4      /dev/block/bootdevice/by-name/userdata             flags=encryptable=footer;length=-16384
 /boot           emmc      /dev/block/bootdevice/by-name/boot                 flags=display="Boot"
