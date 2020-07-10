@@ -19,6 +19,7 @@
 #
 FDEVICE="chiron"
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
+    echo "WARNING: EXPORTING BUILD VARIABLES FOR $FDEVICE"
     export FOX_BUILD_FULL_KERNEL_SOURCES=0 # 0=use prebuilt kernel; 1=build kernel from source
     export OF_USE_MAGISKBOOT=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
