@@ -38,7 +38,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1 # ONLY PIE BUILD SYSTEM!
     export FOX_REPLACE_TOOLBOX_GETPROP=1
     export FOX_USE_TAR_BINARY=1
-    export FOX_USE_ZIP_BINARY=1
+    export FOX_USE_UNZIP_BINARY=1
     export OF_CHECK_OVERWRITE_ATTEMPTS=1
     export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
     export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
@@ -49,6 +49,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_RESET_SETTINGS=1
     export FOX_ADVANCED_SECURITY=1
     export OF_QUICK_BACKUP_LIST="/boot;/system;/vendor;/data;"
+    export OF_NO_SAMSUNG_SPECIAL=1
 fi
 
 add_lunch_combo omni_"$FDEVICE"-eng
