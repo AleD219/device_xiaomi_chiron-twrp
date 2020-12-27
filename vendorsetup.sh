@@ -23,7 +23,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_BUILD_FULL_KERNEL_SOURCES=0 # 0=use prebuilt kernel; 1=build kernel from source
     export OF_USE_MAGISKBOOT=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
-    export OF_DONT_PATCH_ON_FRESH_INSTALLATION=1
     export FOX_USE_NANO_EDITOR=1
     export OF_CLASSIC_LEDS_FUNCTION=0
     export OF_OTA_RES_DECRYPT=1
