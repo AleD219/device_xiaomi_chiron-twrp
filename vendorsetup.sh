@@ -22,6 +22,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     echo "WARNING: EXPORTING BUILD VARIABLES FOR $FDEVICE"
     export FOX_BUILD_FULL_KERNEL_SOURCES=0 # 0=use prebuilt kernel; 1=build kernel from source
     export OF_USE_MAGISKBOOT=1
+    export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
     export FOX_USE_NANO_EDITOR=1
     export OF_CLASSIC_LEDS_FUNCTION=0
@@ -43,12 +44,15 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
     export OF_USE_TWRP_SAR_DETECT=1
     export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-    export FOX_R11=1
     export OF_USE_LOCKSCREEN_BUTTON=1
     export FOX_RESET_SETTINGS=1
     export FOX_ADVANCED_SECURITY=1
     export OF_QUICK_BACKUP_LIST="/boot;/system;/vendor;/data;"
     export OF_NO_SAMSUNG_SPECIAL=1
+    export FOX_USE_XZ_UTILS=1
+    export FOX_USE_GREP_BINARY=1
+    export FOX_USE_SED_BINARY=1
+    export OF_RUN_POST_FORMAT_PROCESS=1
 fi
 
 add_lunch_combo omni_"$FDEVICE"-eng
